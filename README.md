@@ -19,7 +19,7 @@ Then in your application bootstrap
 
 ```php
 use Origin\DotEnv\DotEnv;
-(new DotEnv())->load(CONFIG);
+(new DotEnv())->load(__DIR__);
 ```
 
 Here is an example of a dotenv file.
@@ -40,5 +40,5 @@ If you want to use a custom name
 
 ```php
 use Origin\DotEnv\DotEnv;
-(new DotEnv())->load(CONFIG,'.env-local');
+(new DotEnv())->load(__DIR__,'.env-local');
 ```
