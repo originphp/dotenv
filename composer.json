@@ -3,7 +3,10 @@
     "description": "OriginPHP DotEnv",
     "type": "library",
     "keywords": [
-        "originphp"
+        "originphp",
+        "dotenv",
+        "env",
+        ".env"
     ],
     "homepage": "https://www.originphp.com",
     "license": "MIT",
