@@ -72,7 +72,7 @@ class DotEnv
         $quotes = '"';
         foreach ($lines as $row) {
             $row = trim($row);
-            if ($row === '' or substr($row, 0, 1) === '#') {
+            if ($row === '' || substr($row, 0, 1) === '#') {
                 continue;
             }
             
@@ -91,12 +91,12 @@ class DotEnv
             }
 
             # Capture Multiline
-            if ($capture and substr($row, -1) === $quotes) {
+            if ($capture && substr($row, -1) === $quotes) {
                 $env[$capture] .= "\n". rtrim($row, '"');
                 $capture = false;
             } elseif ($capture) {
                 $env[$capture] .= "\n". $row;
-            } elseif (in_array(substr($value, 0, 1), ['"',"'"]) and ! in_array(substr($row, -1), ['"',"'"])) {
+            } elseif (in_array(substr($value, 0, 1), ['"',"'"]) && ! in_array(substr($row, -1), ['"',"'"])) {
                 $capture = $key;
                 $quotes = substr($value, 0, 1);
             }
@@ -121,7 +121,7 @@ class DotEnv
      */
     protected function value($value)
     {
-        if ($value === 'null' || $value === '') {
+        if ($value === 'null') {
             return null;
         }
         if ($value === 'true' || $value === 'false') {
