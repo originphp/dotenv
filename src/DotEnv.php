@@ -30,9 +30,9 @@ class DotEnv
     /**
      * Loads an .env file
      *
-     * @return void
+     * @return array
      */
-    public function load(string $directory, string $file = '.env') : void
+    public function load(string $directory, string $file = '.env') : array
     {
         $file = $directory  . DIRECTORY_SEPARATOR . $file;
         if (is_readable($file)) {
@@ -42,7 +42,7 @@ class DotEnv
                 $this->env($key, $value);
             }
 
-            return;
+            return $env;
         }
         throw new InvalidArgumentException(sprintf('%s could not be found.', $file)); # Security
     }

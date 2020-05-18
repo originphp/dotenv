@@ -60,8 +60,9 @@ class DotEnvTest extends \PHPUnit\Framework\TestCase
         $value = bin2hex(random_bytes('32'));
         file_put_contents($directory . '/' . $file, "ENVTEST_UUID={$value}\n");
 
-        $dotenv->load($directory, $file); // TestApp
+        $array = $dotenv->load($directory, $file); // TestApp
         $this->assertEquals($value, $_ENV['ENVTEST_UUID']);
+        $this->assertEquals(['ENVTEST_UUID' => $value], $array);
     }
 
     public function testMultiLine()
