@@ -39,8 +39,8 @@ class DotEnvTest extends \PHPUnit\Framework\TestCase
         $dotenv->load(__DIR__, '.env.test'); // TestApp
         
         $results = $dotenv->getEnv();
-  
-        $this->assertEquals('3a4e41e63f65b228e2927d6045c09577', md5(json_encode($results)));
+
+        $this->assertEquals('a8aa5046852048e0655d987528719c54', md5(json_encode($results)));
     }
 
     public function testLoadExecption()

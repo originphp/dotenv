@@ -121,15 +121,17 @@ class DotEnv
      */
     protected function value($value)
     {
-        if ($value === 'null') {
-            $value = null;
-        } elseif ($value === 'true') {
-            $value = true;
-        } elseif ($value === 'false') {
-            $value = false;
-        } else {
-            $value = str_replace('\n', "\n", $value);
+        if ($value === 'null' || $value === '') {
+            return null;
         }
+        if ($value === 'true' || $value === 'false') {
+            return $value === 'true' ? true : false;
+        }
+        if (is_numeric($value)) {
+            return is_int($value) ?  intval($value) : floatval($value);
+        }
+
+        $value = str_replace('\n', "\n", $value);
 
         return is_string($value) ?  trim($value) : $value;
     }
