@@ -1,7 +1,7 @@
 # DotEnv
 
 ![license](https://img.shields.io/badge/license-MIT-brightGreen.svg)
-[![build](https://travis-ci.org/originphp/dotenv.svg?branch=master)](https://travis-ci.org/originphp/dotenv)
+[![build](https://github.com/originphp/dotenv/workflows/CI/badge.svg)](https://github.com/originphp/dotenv/actions)
 [![coverage](https://coveralls.io/repos/github/originphp/dotenv/badge.svg?branch=master)](https://coveralls.io/github/originphp/dotenv?branch=master)
 
 A dotenv parser.
